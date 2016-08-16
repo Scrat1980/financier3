@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Shop;
 
 class SiteController extends Controller
 {
@@ -61,6 +62,13 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionShowShop()
+    {
+        $shop = new Shop;
+        var_dump($shop->getShops());
+        die;
     }
 
     /**
