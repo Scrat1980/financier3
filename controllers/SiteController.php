@@ -64,11 +64,12 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionShowShop()
+    public function actionHouse()
     {
-        $shop = new Shop;
-        var_dump($shop->getShops());
-        die;
+        $level = 0;
+//        $house =
+
+        return $this->render('house', ['level' => $level]);
     }
 
     /**
