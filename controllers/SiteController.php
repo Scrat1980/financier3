@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\HouseLevel;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -9,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Shop;
+use yii\helpers\VarDumper;
 
 class SiteController extends Controller
 {
@@ -66,10 +68,10 @@ class SiteController extends Controller
 
     public function actionHouse()
     {
-        $level = 0;
-//        $house =
+        $level = 1;
+        $houseLevel = HouseLevel::findOne($level);
 
-        return $this->render('house', ['level' => $level]);
+        return $this->render('house', ['picture' => $houseLevel->current_picture]);
     }
 
     /**
